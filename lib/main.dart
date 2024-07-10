@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'pages/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,24 +9,13 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blue,
-          title: const Text("hello!"),
-        ),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: const[
-            Icon(Icons.backpack),
-            Icon(Icons.leaderboard),
-            Icon(Icons.person),
-          ],
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Poppins'),
+      home: HomePage()
     );
   }
 }
