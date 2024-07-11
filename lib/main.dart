@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'pages/home.dart';
-
+import 'pages/splash_page.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -15,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Poppins'),
-      home: HomePage()
+      home: const SplashPage()
     );
   }
 }
