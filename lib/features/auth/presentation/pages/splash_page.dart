@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fog_of_earth/features/auth/presentation/bloc/splash_cubit.dart';
-import 'package:fog_of_earth/features/auth/presentation/pages/auth/signin.dart';
+import 'package:fog_of_earth/features/auth/presentation/pages/auth/welcome_page.dart';
 
 import '../bloc/splash_state.dart';
 
@@ -16,7 +16,7 @@ class SplashPage extends StatelessWidget {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder:(context) => SignIn()
+              builder:(context) => WelcomePage()
             )
           );
         }
