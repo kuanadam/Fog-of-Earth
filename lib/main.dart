@@ -19,6 +19,11 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           fontFamily: 'Poppins',
           scaffoldBackgroundColor: Colors.black,
+          textTheme: const TextTheme(
+            bodyMedium: TextStyle(
+            color: Colors.white,
+            ),
+          ),
         ),
         home: const SplashPage()
       ),
