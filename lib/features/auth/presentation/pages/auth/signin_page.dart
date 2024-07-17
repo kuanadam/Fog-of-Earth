@@ -25,20 +25,76 @@ class SignIn extends StatelessWidget {
             )
           )
         ),
-        Center(
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const WelcomePage()),
-              );
-            },
-            child: Text (
-              'Go back',
-            )
-          )
-        )
+        UsernameField(),
+        PasswordField(),
+        SignInBackButton()
         ]
+      )
+    );
+  }
+}
+
+class PasswordField extends StatelessWidget {
+  const PasswordField({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: SizedBox(
+        width: 300,
+        child: TextField(
+          decoration: InputDecoration(
+            border: OutlineInputBorder(),
+            labelText: 'Password',
+          ),
+        )
+      )
+    );
+  }
+}
+
+
+class UsernameField extends StatelessWidget {
+  const UsernameField({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: SizedBox(
+        width: 300,
+        child: TextField(
+          decoration: InputDecoration(
+            border: OutlineInputBorder(),
+            labelText: 'Username',
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class SignInBackButton extends StatelessWidget {
+  const SignInBackButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const WelcomePage()),
+          );
+        },
+        child: Text (
+          'Go back',
+        )
       )
     );
   }

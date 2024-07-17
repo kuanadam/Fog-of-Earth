@@ -12,23 +12,79 @@ class Registration extends StatelessWidget {
         children: [
           Center(
            child: Image.asset(
-            'assets/images/splash_image.png'
+            'assets/images/splash_image.png',
+            width: 200,
+            height: 200,
            ),
            ),
-          Center(
-            child: ElevatedButton (
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const WelcomePage()),
-                  );  
-              },
-              child: Text(
-                'Go Back'
-              )
-            )
-          )  
+          const RegistrationUsernameField(),
+          const RegistrationPasswordField(),
+          const RegistrationBack(),  
         ]
+      )
+    );
+  }
+}
+class RegistrationPasswordField extends StatelessWidget {
+  const RegistrationPasswordField({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: SizedBox(
+        width: 300,
+      child: TextField(
+        decoration: InputDecoration(
+          border: OutlineInputBorder(),
+          labelText: "Password",
+        )
+      )
+      )
+    );
+  }
+}
+
+class RegistrationUsernameField extends StatelessWidget {
+  const RegistrationUsernameField({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: SizedBox(
+        width: 300,
+      child: TextField(
+        decoration: InputDecoration(
+          border: OutlineInputBorder(),
+          labelText: "Username",
+        )
+      )
+      )
+    );
+  }
+}
+
+class RegistrationBack extends StatelessWidget {
+  const RegistrationBack({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ElevatedButton (
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const WelcomePage()),
+            );  
+        },
+        child: const Text(
+          'Go Back'
+        )
       )
     );
   }
