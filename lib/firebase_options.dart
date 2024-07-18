@@ -53,7 +53,6 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAYwLS5fhYlUWdAtA9H7InR_DH-mlozviA',
     appId: '1:570700571432:android:f2b117a839b2886f60a61d',
     messagingSenderId: '570700571432',
     projectId: 'fog-of-earth',
