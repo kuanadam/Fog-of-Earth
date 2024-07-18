@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "570700571432",
+    "project_id": "fog-of-earth",
+    "storage_bucket": "fog-of-earth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570700571432:android:f2b117a839b2886f60a61d",
+        "android_client_info": {
+          "package_name": "com.example.fogofearth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYwLS5fhYlUWdAtA9H7InR_DH-mlozviA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-package com.example.fog_of_earth
+package com.example.fogofearth
 
 import io.flutter.embedding.android.FlutterActivity
 
