@@ -19,17 +19,53 @@ class SignIn extends StatelessWidget {
           ),
         Center(
           child: Text(
-            "Fog of Earth",
+            "Sign Into Your Account",
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              fontSize: 60,
+              fontSize: 30,
             )
           )
         ),
-        UsernameField(),
-        PasswordField(),
-        SignInBackButton()
+        const SizedBox(height: 40),
+        const UsernameField(),
+        const SizedBox(height: 5),
+        const PasswordField(),
+        const SizedBox(height: 5),
+        const ConfirmSignInButton(),
+        const SizedBox(height: 100),
+        const BackButton(),
         ]
       )
+    );
+  }
+}
+
+class ConfirmSignInButton extends StatelessWidget {
+  const ConfirmSignInButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: SizedBox(
+        width: 300,
+      child: ElevatedButton(
+        onPressed: () {},
+        style: ElevatedButton.styleFrom(
+        backgroundColor: Color(0xFF8656ED),
+
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(5),
+          )
+        ),
+        child: const Text(
+          'Sign In',
+        style: TextStyle(
+          color: Colors.white,
+        )
+        )
+      ),
+      ),
     );
   }
 }
@@ -47,6 +83,8 @@ class PasswordField extends StatelessWidget {
         child: TextField(
           decoration: InputDecoration(
             border: OutlineInputBorder(),
+            filled: true,
+            fillColor: Colors.white,
             labelText: 'Password',
           ),
         )
@@ -68,6 +106,8 @@ class UsernameField extends StatelessWidget {
         width: 300,
         child: TextField(
           decoration: InputDecoration(
+            filled: true,
+            fillColor: Colors.white,
             border: OutlineInputBorder(),
             labelText: 'Username',
           ),
@@ -77,8 +117,8 @@ class UsernameField extends StatelessWidget {
   }
 }
 
-class SignInBackButton extends StatelessWidget {
-  const SignInBackButton({
+class BackButton extends StatelessWidget {
+  const BackButton({
     super.key,
   });
 

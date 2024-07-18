@@ -45,7 +45,7 @@ class SignInButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: 130,
+        width: 300,
       child: ElevatedButton(
         onPressed: () {
           Navigator.push(
@@ -53,8 +53,18 @@ class SignInButton extends StatelessWidget {
           MaterialPageRoute(builder: (context) => const SignIn()),
           );
         },
-      child:  Text(
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+        ),
+        backgroundColor: const Color(0xFF8656ED),
+      ),
+      child: const Text(
         'Sign In',
+      style: TextStyle(
+        fontSize: 20,
+        color: Colors.white,
+      ),
       ),
       ),
       )
@@ -70,6 +80,8 @@ class RegistrationButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
+      child: SizedBox(
+        width: 300,
       child: ElevatedButton(
         onPressed: () {
           Navigator.push (
@@ -77,10 +89,21 @@ class RegistrationButton extends StatelessWidget {
             MaterialPageRoute(builder: (context) => const Registration())
           );
         },
-        child: Text (
-          'Registration'
+        style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
         ),
-      ),
-    );
+          backgroundColor: Colors.white,
+        ),
+        child: const Text (
+          'Create Account',
+        style: TextStyle(
+          fontSize: 20,
+          color: Color(0xFF8656ED),
+        ),
+          ),
+        ),
+        ),
+      );
   }
 }
