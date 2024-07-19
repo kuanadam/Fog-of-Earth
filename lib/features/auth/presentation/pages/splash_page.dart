@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fog_of_earth/features/auth/presentation/bloc/splash_cubit.dart';
-import 'package:fog_of_earth/features/auth/presentation/pages/auth/welcome_page.dart';
+import 'package:fog_of_earth/features/auth/presentation/pages/welcome_page.dart';
 
 import '../bloc/splash_state.dart';
 

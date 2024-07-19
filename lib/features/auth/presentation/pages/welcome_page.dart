@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:fog_of_earth/features/auth/presentation/pages/auth/registration_page.dart';
-import 'package:fog_of_earth/features/auth/presentation/pages/auth/signin_page.dart';
+import 'package:fog_of_earth/features/auth/presentation/pages/registration_page.dart';
+import 'package:fog_of_earth/features/auth/presentation/pages/signin_page.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage ({super.key});

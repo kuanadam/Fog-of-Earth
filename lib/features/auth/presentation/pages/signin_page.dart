@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fog_of_earth/features/auth/presentation/pages/auth/welcome_page.dart';
+import 'package:fog_of_earth/features/auth/presentation/pages/welcome_page.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});

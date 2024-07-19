@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 import "package:flutter/widgets.dart";
-import "package:fog_of_earth/features/auth/presentation/pages/auth/welcome_page.dart";
+import "package:fog_of_earth/features/auth/presentation/pages/welcome_page.dart";
 
 class Registration extends StatelessWidget {
   const Registration({super.key});
