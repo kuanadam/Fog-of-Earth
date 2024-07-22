@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fog_of_earth/features/auth/presentation/pages/welcome_page.dart';
 
+
 class SignIn extends StatelessWidget {
-  const SignIn({super.key});
+ const SignIn({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class SignIn extends StatelessWidget {
           )
         ),
         const SizedBox(height: 40),
-        const UsernameField(),
+        const EmailField(),
         const SizedBox(height: 5),
         const PasswordField(),
         const SizedBox(height: 5),
@@ -52,7 +53,7 @@ class ConfirmSignInButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {},
         style: ElevatedButton.styleFrom(
-        backgroundColor: Color(0xFF8656ED),
+        backgroundColor:const Color(0xFF8656ED),
 
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5),
@@ -94,8 +95,8 @@ class PasswordField extends StatelessWidget {
 }
 
 
-class UsernameField extends StatelessWidget {
-  const UsernameField({
+class EmailField extends StatelessWidget {
+  const EmailField({
     super.key,
   });
 
@@ -109,7 +110,7 @@ class UsernameField extends StatelessWidget {
             filled: true,
             fillColor: Colors.white,
             border: OutlineInputBorder(),
-            labelText: 'Username',
+            labelText: 'Email',
           ),
         ),
       ),
@@ -132,7 +133,7 @@ class BackButton extends StatelessWidget {
             MaterialPageRoute(builder: (context) => const WelcomePage()),
           );
         },
-        child: Text (
+        child: const Text (
           'Go back',
         )
       )

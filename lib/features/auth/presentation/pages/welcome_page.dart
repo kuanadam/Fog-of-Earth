@@ -50,7 +50,7 @@ class SignInButton extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-          MaterialPageRoute(builder: (context) => const SignIn()),
+          MaterialPageRoute(builder: (context) => SignIn()),
           );
         },
       style: ElevatedButton.styleFrom(
@@ -84,9 +84,9 @@ class RegistrationButton extends StatelessWidget {
         width: 300,
       child: ElevatedButton(
         onPressed: () {
-          Navigator.push (
+          Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const Registration())
+            MaterialPageRoute(builder: (context) =>  RegistrationPage()),
           );
         },
         style: ElevatedButton.styleFrom(
