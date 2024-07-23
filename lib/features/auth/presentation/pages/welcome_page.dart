@@ -28,8 +28,8 @@ class WelcomePage extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 150),
-        SignInButton(),
-        RegistrationButton(),
+        const SignInButton(),
+        const RegistrationButton(),
       ],
     ),
     );

@@ -20,20 +20,21 @@ class _RegistrationPageState extends State<RegistrationPage> {
         child: Column(
           children: [
           SizedBox(
-            width: 200,
-            height: 200,
+          height: 150,
           child: Image.asset('assets/images/splash_image.png'),
           ),
           const Text(
-            "Sign Up",
+            "Create Your Account",
           style: TextStyle(
-            fontSize: 40,
+            fontSize: 35,
           )
           ),
-            const SizedBox(height: 60),
+            const SizedBox(height: 40),
             _emailAddress(),
             _password(),
-            _signUpButton(),
+            const SizedBox(height: 20),
+            _signUpButton(context),
+            _BackButton(context),
           ],
         ),
       ),
@@ -85,23 +86,48 @@ class _RegistrationPageState extends State<RegistrationPage> {
       ),
     );
   }
-
-
-Widget _signUpButton(){
+Widget _BackButton(BuildContext context){
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
     ),
+    onPressed:(){
+    Navigator.push(
+      context,
+    MaterialPageRoute(builder: (context) => WelcomePage(),
+    ),
+    );
+    },
+  child: Text(
+    'Back',
+  )
+  );
+}
+
+Widget _signUpButton(BuildContext context){
+  return ElevatedButton(
+    style: ElevatedButton.styleFrom(
+      backgroundColor:const Color(0xFF8656ED),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10)),
+      minimumSize: const Size(300, 50),
+    ),
      onPressed: () async{
       await Auth().signUp(
         email: _emailController.text,
         password: _passwordController.text,
+        context: context,
       );
      },
     child: const Text(
-      "Create Your Account",
+      "Sign Up",
+    style: TextStyle(
+    fontSize: 20,
+    color: Colors.white,
+    fontFamily: 'Poppins',
+    )
     ),
   );
 }

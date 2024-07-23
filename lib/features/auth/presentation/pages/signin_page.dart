@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:fog_of_earth/features/auth/presentation/pages/welcome_page.dart';
+import "package:fog_of_earth/features/auth/presentation/pages/auth/auth.dart";
 
-
-class SignIn extends StatelessWidget {
+class SignIn extends StatefulWidget {
  const SignIn({super.key});
+
+  @override
+  State<SignIn> createState() => _SignInState();
+}
+
+class _SignInState extends State<SignIn> {
+final TextEditingController _emailsignInController = TextEditingController();
+final TextEditingController _passwordsignInController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -26,32 +34,31 @@ class SignIn extends StatelessWidget {
             )
           )
         ),
-        const SizedBox(height: 40),
-        const EmailField(),
+        SizedBox(height: 40),
+         _emailField(),
+        SizedBox(height: 5),
+         _passwordField(),
         const SizedBox(height: 5),
-        const PasswordField(),
-        const SizedBox(height: 5),
-        const ConfirmSignInButton(),
+         _confirmSignInButton(context),
         const SizedBox(height: 100),
-        const BackButton(),
+        _backHome(context),
         ]
       )
     );
   }
-}
 
-class ConfirmSignInButton extends StatelessWidget {
-  const ConfirmSignInButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
+  Widget _confirmSignInButton(BuildContext context) {
     return Center(
       child: SizedBox(
         width: 300,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () async {
+        await Auth().SignIn(
+          email: _emailsignInController.text,
+          password: _passwordsignInController.text,
+          context: context,
+        );
+        },
         style: ElevatedButton.styleFrom(
         backgroundColor:const Color(0xFF8656ED),
 
@@ -69,20 +76,15 @@ class ConfirmSignInButton extends StatelessWidget {
       ),
     );
   }
-}
 
-class PasswordField extends StatelessWidget {
-  const PasswordField({
-    super.key,
-  });
 
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
+  Widget _passwordField() {
+    return  Center(
       child: SizedBox(
         width: 300,
         child: TextField(
-          decoration: InputDecoration(
+          controller: _passwordsignInController,
+          decoration: const InputDecoration(
             border: OutlineInputBorder(),
             filled: true,
             fillColor: Colors.white,
@@ -92,21 +94,15 @@ class PasswordField extends StatelessWidget {
       )
     );
   }
-}
 
 
-class EmailField extends StatelessWidget {
-  const EmailField({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
+  Widget _emailField() {
+    return  Center(
       child: SizedBox(
         width: 300,
         child: TextField(
-          decoration: InputDecoration(
+          controller: _emailsignInController,
+          decoration: const InputDecoration(
             filled: true,
             fillColor: Colors.white,
             border: OutlineInputBorder(),
@@ -116,15 +112,9 @@ class EmailField extends StatelessWidget {
       ),
     );
   }
-}
 
-class BackButton extends StatelessWidget {
-  const BackButton({
-    super.key,
-  });
 
-  @override
-  Widget build(BuildContext context) {
+  Widget _backHome (BuildContext context) {
     return Center(
       child: ElevatedButton(
         onPressed: () {
