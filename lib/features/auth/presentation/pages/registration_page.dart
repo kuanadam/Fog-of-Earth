@@ -16,26 +16,29 @@ class _RegistrationPageState extends State<RegistrationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-          SizedBox(
-          height: 150,
-          child: Image.asset('assets/images/splash_image.png'),
+      resizeToAvoidBottomInset: true,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+            SizedBox(
+            height: 150,
+            child: Image.asset('assets/images/splash_image.png'),
+            ),
+            const Text(
+              "Create Your Account",
+            style: TextStyle(
+              fontSize: 35,
+            )
+            ),
+              const SizedBox(height: 40),
+              _emailAddress(),
+              _password(),
+              const SizedBox(height: 20),
+              _signUpButton(context),
+              _BackButton(context),
+            ],
           ),
-          const Text(
-            "Create Your Account",
-          style: TextStyle(
-            fontSize: 35,
-          )
-          ),
-            const SizedBox(height: 40),
-            _emailAddress(),
-            _password(),
-            const SizedBox(height: 20),
-            _signUpButton(context),
-            _BackButton(context),
-          ],
         ),
       ),
     );

@@ -16,33 +16,36 @@ final TextEditingController _passwordsignInController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Center(
-            child: Image.asset(
-              'assets/images/splash_image.png',
-              height: 200,
-              width: 200,
+      resizeToAvoidBottomInset: true,   
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Center(
+              child: Image.asset(
+                'assets/images/splash_image.png',
+                height: 200,
+                width: 200,
+              ),
             ),
-          ),
-        Center(
-          child: Text(
-            "Sign Into Your Account",
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              fontSize: 30,
+          Center(
+            child: Text(
+              "Sign Into Your Account",
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                fontSize: 30,
+              )
             )
-          )
+          ),
+          SizedBox(height: 40),
+           _emailField(),
+          SizedBox(height: 5),
+           _passwordField(),
+          const SizedBox(height: 5),
+           _confirmSignInButton(context),
+          const SizedBox(height: 100),
+          _backHome(context),
+          ]
         ),
-        SizedBox(height: 40),
-         _emailField(),
-        SizedBox(height: 5),
-         _passwordField(),
-        const SizedBox(height: 5),
-         _confirmSignInButton(context),
-        const SizedBox(height: 100),
-        _backHome(context),
-        ]
       )
     );
   }
