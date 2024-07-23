@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:fog_of_earth/features/auth/presentation/pages/home_page.dart';
+import 'package:fog_of_earth/features/auth/presentation/pages/welcome_page.dart';
 
 class Auth{
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -80,5 +81,26 @@ class Auth{
       fontSize: 14.0,
     );
     }
+  }
+
+  Future<void> SignOut({
+    required BuildContext context,
+  }) async {
+    await _firebaseAuth.signOut(); 
+    Future.delayed(const Duration(seconds: 1));
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => WelcomePage()),
+      );
+      String message = "Successfully signed out";
+      Fluttertoast.showToast(
+      msg: message,
+      toastLength: Toast.LENGTH_LONG,
+      gravity: ToastGravity.SNACKBAR,
+      backgroundColor: const Color.fromARGB(137, 37, 37, 37),
+      textColor: Colors.white,
+      fontSize: 14.0,
+    );
+
   }
 }
